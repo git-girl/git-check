@@ -1,3 +1,4 @@
 #!/usr/bin/env zsh
  
-echo "Hello World"
+source ./git-check.zsh
+add-zsh-hook chpwd __git_check_hook_fn
