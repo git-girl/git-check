@@ -36,15 +36,6 @@ __git_main() {
 
 __git_check_hook_fn() { 
   if [[ -d './.git' ]]; then
-    __silent_background __git_main
+    (__git_main 1> /dev/null 2> /dev/null & disown)
   fi
 }
-
-# thanks to this stackoverflow answer 
-# https://stackoverflow.com/a/51061046
-__silent_background() {
-    { 2>&3 "$@"& } 3>&2 2>/dev/null
-    disown &>/dev/null  # Prevent whine if job has already completed
-}
-# add with: 
-# add-zsh-hook chpwd git_check_hook_fn
