@@ -30,13 +30,14 @@ __git_main() {
   access=$?
 
   if [ $access -eq 0 ]; then 
-    run_and_report_git_diff >/dev/null & disown
+    __run_and_report_git_diff >/dev/null & disown
   fi
 }
 
 __git_check_hook_fn() { 
   if [[ -d './.git' ]]; then
-    git_main 1> /dev/null 2> /dev/null & disown
+    { __git_main 1> /dev/null 2> /dev/null & disown } 2>/dev/null;
+    disown &>/dev/null
   fi
 }
 
