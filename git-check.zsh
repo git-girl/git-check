@@ -36,6 +36,6 @@ __git_main() {
 
 __git_check_hook_fn() { 
   if [[ -d './.git' ]]; then
-    (__git_main & disown) > /dev/null
+    (__git_main >/dev/null & disown) 2>/dev/null
   fi
 }
