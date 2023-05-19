@@ -2,7 +2,7 @@
 
 **Adds a zsh hook to check if the origin of the current branch has changes to local in the background and sends a notification** 
 
-
+![Gif showing the behavior](/assets/git-check.gif)
 
 ## Installing
 
