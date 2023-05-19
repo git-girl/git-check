@@ -12,7 +12,7 @@ __git_check_read_origin_and_fetch() {
   retval=$?
 
   if [[ $retval != 0 ]]; then 
-    notify-send "Git Fetch & Diff" "couldn't run git fetch (3sec timeout), check your ssh keys, or internet connection"
+    notify-send "Git Check" "couldn't run git fetch (3sec timeout), check your ssh keys, or internet connection"
   fi
 
   return $retval
@@ -22,9 +22,9 @@ __run_and_report_git_diff() {
 
   git_diff=$(git diff @{u} HEAD --name-only)
   if [[ $git_diff != "" ]]; then
-    notify-send "Git Fetch & Diff" "Found these files on origin different to local: \n $git_diff"
+    notify-send "Git Check" "Found these files on origin different to local: \n $git_diff"
   else 
-    notify-send "Git Fetch & Diff" "Clean: no diff to origin isn't ahead of local"
+    notify-send "Git Check" "Clean: no diff to origin isn't ahead of local"
   fi  
 }
 
