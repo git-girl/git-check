@@ -1,4 +1,8 @@
-#!/usr/bin/env zsh
+# Git Check Zsh Plugin
+# Written by Git Girl (git-girl) 
+# github.com/git-girl/git-check
+
+# This file contains the logic for checking git origin and hadnling errors
 
 __git_check_read_origin_and_fetch() { 
   # returns 124 on timeout to $?
