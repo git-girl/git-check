@@ -29,7 +29,7 @@ git clone https://github.com/git-girl/git-check ${ZSH_CUSTOM:-~/.oh-my-zsh/custo
     ```
     plugins=( 
         # other plugins...
-        pseudo-projectile
+        git-check
     )
     ```
 3. Start a new terminal session.
